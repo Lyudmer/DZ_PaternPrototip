@@ -11,7 +11,7 @@ public class PrTranspDocClass : ITranspDoc<PrTranspDocClass>, ICloneable
     public string Code { get; set; }
     public string NumTs { get; set; }
 
-    private PrNameTSDocClass NameTs;
+  
     public PrTranspDocClass MyClone()
     {
         return new PrTranspDocClass(Code, NumTs)
@@ -26,8 +26,7 @@ public class PrTranspDocClass : ITranspDoc<PrTranspDocClass>, ICloneable
     }
     public override string ToString()
     {
-        NameTs = new PrNameTSDocClass(Code);
-        return $"Документ (Код:{Code}, Наименование:{NameTs.Name}, Номер:{NumTs})";
+        return $"{new PrNameTSDocClass(Code).Name}({Code}) \n Номер:{NumTs}";
     }
 
 }

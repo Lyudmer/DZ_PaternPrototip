@@ -12,13 +12,14 @@ public class PrHeaderDocClass : IHeaderDoc<PrHeaderDocClass>,ICloneable
     public DateTime DocDate { get; set; }
     public string Code { get; set; }
 
-    private PrNameDocClass NameDoc;
+   
     public PrHeaderDocClass MyClone()
     {
         return new PrHeaderDocClass(Code,Number,DocDate)
         {
             Number = this.Number,
-            Code = this.Code
+            Code = this.Code,
+            DocDate = this.DocDate
         };
     }
     public object Clone()
@@ -27,8 +28,8 @@ public class PrHeaderDocClass : IHeaderDoc<PrHeaderDocClass>,ICloneable
     }
     public override string ToString()
     {
-        NameDoc = new PrNameDocClass(Code);
-        return $"Документ : {NameDoc.Name}({Code})\n Номер {Number} дата  {DocDate.Date}";
+        
+        return $"{new PrNameDocClass(Code).Name} ({Code}) \n Номер {Number} дата  {DocDate.Date}";
     }
 
 }

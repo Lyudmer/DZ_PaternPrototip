@@ -18,8 +18,8 @@
     public string Goods { get; set; }
     public string Signatory { get; set; }
 
-    private PrHeaderDocClass Header ;
-    private PrTranspDocClass ResTransp;
+    private PrBodyDocClass Header ;
+    private PrBodyDocClass ResTransp;
     private PrBodyDocClass ResConsignor;
     private PrBodyDocClass ResConsignee;
     private PrBodyDocClass ResCarrier;
@@ -55,13 +55,13 @@
     }
     public override string ToString()
     {
-        Header = new PrHeaderDocClass(Code, Number, DocDate);
-        ResTransp = new PrTranspDocClass(VidTs,NumTs);
+        Header       = new PrBodyDocClass("Документ: "  , new PrHeaderDocClass(Code, Number, DocDate).ToString());
+        ResTransp    = new PrBodyDocClass("Получатель " , new PrTranspDocClass(VidTs,NumTs).ToString());
         ResConsignor = new PrBodyDocClass("Отправитель ", new PrOrgDocClass(ConsignorName, ConsignorCr, ConsignorAdr).ToString());
-        ResConsignee = new PrBodyDocClass("Получатель ", new PrOrgDocClass(ConsigneeName, ConsigneeCr, ConsigneeAdr).ToString());
-        ResCarrier = new PrBodyDocClass("Перевозчик ", new PrOrgDocClass(CarrierName, CarrierCr, CarrierAdr).ToString());
-        ResGoods = new PrBodyDocClass("Описание груза ", Goods);
-        ResSign = new PrBodyDocClass("Документ составил и подписал", Signatory);
+        ResConsignee = new PrBodyDocClass("Получатель " , new PrOrgDocClass(ConsigneeName, ConsigneeCr, ConsigneeAdr).ToString());
+        ResCarrier   = new PrBodyDocClass("Перевозчик " , new PrOrgDocClass(CarrierName, CarrierCr, CarrierAdr).ToString());
+        ResGoods     = new PrBodyDocClass("Описание груза ", Goods);
+        ResSign      = new PrBodyDocClass("Документ составил и подписал ", Signatory);
 
         return $"{Header} " +
                $"\n {ResConsignor} " +
