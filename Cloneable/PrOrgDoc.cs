@@ -29,7 +29,7 @@ public class PrOrgDocClass : IOrgDoc<PrOrgDocClass>,ICloneable
     public override string ToString()
     {
         NameCr = new PrNameCountryDocClass(Code);
-        return $" Наименование:{Name}, Адрес:{NameCr.Name},{Address} ";
+        return $" Наименование:{Name}\n Адрес:{NameCr.Name},{Address} ";
     }
 
 }
