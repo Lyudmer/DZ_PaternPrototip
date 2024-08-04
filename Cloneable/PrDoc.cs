@@ -64,10 +64,10 @@
         ResSign = new PrBodyDocClass("Документ составил и подписал", Signatory);
 
         return $"{Header} " +
-               $"\n {ResTransp}" +
                $"\n {ResConsignor} " +
                $"\n {ResConsignee} " +
                $"\n {ResCarrier} " +
+               $"\n {ResTransp}" +
                $"\n {ResGoods}"+
                 $"\n {ResSign}";
     }
