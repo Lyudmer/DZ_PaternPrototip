@@ -1,6 +1,6 @@
 ﻿using System.Reflection.PortableExecutable;
 
-public class PrOrgDocClass : IOrgDoc<PrOrgDocClass>,ICloneable
+public class PrOrgDocClass : IDocInfo<PrOrgDocClass>,ICloneable
 {
     public PrOrgDocClass(string name,string countrycode, string address)
     {

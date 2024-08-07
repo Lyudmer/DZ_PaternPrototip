@@ -1,6 +1,6 @@
 ﻿using System.Reflection.PortableExecutable;
 
-public class PrTranspDocClass : ITranspDoc<PrTranspDocClass>, ICloneable
+public class PrTranspDocClass : IDocInfo<PrTranspDocClass>, ICloneable
 {
     public PrTranspDocClass(string code, string num)
     {

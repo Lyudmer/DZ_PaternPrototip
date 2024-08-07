@@ -1,6 +1,6 @@
 ﻿using System.Reflection.PortableExecutable;
 
-public class PrHeaderDocClass : IHeaderDoc<PrHeaderDocClass>,ICloneable
+public class PrHeaderDocClass : IDocInfo<PrHeaderDocClass>,ICloneable
 {
     public PrHeaderDocClass(string code,string num,DateTime docdate)
     {

@@ -1,6 +1,6 @@
 ﻿
 // Дженерик интерфейс IMyCloneable
-public interface IDoc<Doc>
+public interface IDocInfo<T>
 {
-    Doc MyClone(); 
+    T MyClone(); 
 }

@@ -1,4 +1,4 @@
-﻿public class PrDoc : IDoc<PrDoc>,ICloneable
+﻿public class PrDoc : IDocInfo<PrDoc>,ICloneable
 {
     public int Id { get; set; }
     public string Number { get; set; }

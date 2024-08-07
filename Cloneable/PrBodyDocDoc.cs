@@ -3,7 +3,7 @@ using Microsoft.VisualBasic;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-public class PrBodyDocClass : IBodyDoc<PrBodyDocClass>,ICloneable
+public class PrBodyDocClass : IDocInfo<PrBodyDocClass>,ICloneable
 {
     public PrBodyDocClass(string typestr, string textstr)
     {
